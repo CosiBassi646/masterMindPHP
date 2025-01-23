@@ -1,6 +1,10 @@
 <?php
    session_start();
-   
+   if (isset( $_SESSION['tentativiUtente'])) {
+    // se la combinazione del computer è settata  
+    } else {
+        $_SESSION['tentativiUtente'] = array();
+    }
    if (isset($_SESSION['combinazionePC'])) {
        // se la combinazione del computer è settata
        echo "Combinazione PC già settata: ";
@@ -95,6 +99,18 @@
         </table>
             <button type="submit" class="btn btn-info">Invia</button>
         </form>
+        <h1>TENTATIVI:</h1>
+        <?php
+            if (count($_SESSION['tentativiUtente']) > 0) {
+                foreach ($_SESSION['tentativiUtente'] as $tentativo) {
+                    echo '<li class="list-group-item">';
+                    echo implode(' - ', $tentativo); // Stampa i colori separati da " - "
+                    echo '</li>';
+                }
+            } else {
+                echo '<li class="list-group-item">Nessun tentativo effettuato</li>';
+            }
+        ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
