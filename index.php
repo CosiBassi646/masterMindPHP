@@ -1,10 +1,20 @@
 <?php
    session_start();
+   //tentativi
    if (isset( $_SESSION['tentativiUtente'])) {
     // se la combinazione del computer è settata  
     } else {
         $_SESSION['tentativiUtente'] = array();
     }
+
+    //suggerimenti
+   if (isset( $_SESSION['suggerimenti'])) {
+    // se la combinazione del computer è settata  
+    } else {
+        $_SESSION['suggerimenti'] = array();
+    }
+
+    //combinazione random del pc
    if (isset($_SESSION['combinazionePC'])) {
        // se la combinazione del computer è settata
        echo "Combinazione PC già settata: ";
@@ -100,17 +110,21 @@
             <button type="submit" class="btn btn-info">Invia</button>
         </form>
         <h1>TENTATIVI:</h1>
+        <ul class="list-group">
         <?php
-            if (count($_SESSION['tentativiUtente']) > 0) {
-                foreach ($_SESSION['tentativiUtente'] as $tentativo) {
+            if (count($_SESSION['tentativiUtente']) > 0) { // controllo se ci sono tentativi
+               
+                foreach ($_SESSION['tentativiUtente'] as $tentativo) {          
                     echo '<li class="list-group-item">';
                     echo implode(' - ', $tentativo); // Stampa i colori separati da " - "
                     echo '</li>';
                 }
+                
             } else {
                 echo '<li class="list-group-item">Nessun tentativo effettuato</li>';
             }
         ?>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
