@@ -112,11 +112,12 @@
         <h1>TENTATIVI:</h1>
         <ul class="list-group">
         <?php
-            if (count($_SESSION['tentativiUtente']) > 0) { // controllo se ci sono tentativi
+         $tentativo = $_SESSION['tentativiUtente'] ;
+            if (count($tentativo) > 0) { // controllo se ci sono tentativi
                
-                foreach ($_SESSION['tentativiUtente'] as $tentativo) {          
+                for($i=0;$i<count($tentativo);$i++) {          
                     echo '<li class="list-group-item">';
-                    echo implode(' - ', $tentativo); // Stampa i colori separati da " - "
+                    echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
                     echo '</li>';
                 }
                 
