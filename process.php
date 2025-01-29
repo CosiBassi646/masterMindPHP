@@ -30,7 +30,7 @@
         $coloriSuggerimento = $_SESSION['suggerimenti'];//array di suggerimenti
         $suggerimentiTmp = array();//array temporaneo per memorizzare i valori
         // Array per tenere traccia dei colori già contati come neri
-    $contatiComeNeri = array();
+        $contatiComeNeri = array();
 
     // Primo ciclo: conta i neri
     for ($i = 0; $i < 4; $i++) {

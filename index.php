@@ -17,7 +17,7 @@
     //combinazione random del pc
    if (isset($_SESSION['combinazionePC'])) {
        // se la combinazione del computer è settata
-       echo "Combinazione PC già settata: ";
+       //echo "Combinazione PC già settata: ";
        echo "<pre>";
        print_r($_SESSION['combinazionePC']);
        echo "</pre>";
@@ -45,10 +45,10 @@
        $_SESSION['combinazionePC'] = $combinazionePC;
    
        // Stampa la combinazione appena generata
-       echo "Combinazione generata: ";
-       echo "<pre>";
-       print_r($combinazionePC);
-       echo "</pre>";
+      // echo "Combinazione generata: ";
+      // echo "<pre>";
+      // print_r($combinazionePC);
+     //  echo "</pre>";
    }
    ?>
 <!doctype html>
@@ -66,65 +66,90 @@
         <tr>
             <td><!--SELEZIONE COLORE 1!-->
                 <input type="radio" id="rosso" name="color1" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
-                <input type="radio" id="verde" name="color1" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
-                <input type="radio" id="blu" name="color1" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+                <label for="rosso" class="text-danger">rosso</label><br>
+                <input type="radio" id="verde" name="color1" value="verde">
+                <label for="verde" class="text-success">verde</label><br>
+                <input type="radio" id="blu" name="color1" value="blu">
+                <label for="blu" class="text-primary">blu</label><br>
                 <input type="radio" id="giallo" name="color1" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>
+                <label for="giallo" class="text-warning" >Giallo</label>
             </td>
 
             <td><!--SELEZIONE COLORE 2 !-->
                 <input type="radio" id="rosso" name="color2" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
-                <input type="radio" id="verde" name="color2" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
-                <input type="radio" id="blu" name="color2" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+               <label for="rosso" class="text-danger">rosso</label><br>
+               <input type="radio" id="verde" name="color2" value="verde">
+               <label for="verde" class="text-success">verde</label><br>
+                <input type="radio" id="blu" name="color2" value="blu">
+               <label for="blu" class="text-primary">blu</label><br>
                 <input type="radio" id="giallo" name="color2" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>      
+              <label for="giallo" class="text-warning" >Giallo</label>      
             </td>
 
             <td><!--SELEZIONE COLORE 3 !-->
                 <input type="radio" id="rosso" name="color3" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
-                <input type="radio" id="verde" name="color3" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
-                <input type="radio" id="blu" name="color3" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+                <label for="rosso" class="text-danger">rosso</label><br>
+            <input type="radio" id="verde" name="color3" value="verde">
+              <label for="verde" class="text-success">verde</label><br>
+               <input type="radio" id="blu" name="color3" value="blu">
+              <label for="blu" class="text-primary">blu</label><br>
                 <input type="radio" id="giallo" name="color3" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>    
+               <label for="giallo" class="text-warning" >Giallo</label>    
             </td>
             <td><!--SELEZIONE COLORE 4 !-->
                 <input type="radio" id="rosso" name="color4" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
-                <input type="radio" id="verde" name="color4" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
-                <input type="radio" id="blu" name="color4" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+                <label for="rosso" class="text-danger">rosso</label><br>
+                <input type="radio" id="verde" name="color4" value="verde">
+                <label for="verde" class="text-success">verde</label><br>
+                <input type="radio" id="blu" name="color4" value="blu">
+                <label for="blu" class="text-primary">blu</label><br>
                 <input type="radio" id="giallo" name="color4" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>    
+                <label for="giallo" class="text-warning" >Giallo</label>    
             </td>
         </table>
             <button type="submit" class="btn btn-info">Invia</button>
         </form>
-        <h1>TENTATIVI:</h1>
-        <ul class="list-group">
-        <?php
-         $tentativo = $_SESSION['tentativiUtente'] ;
-            if (count($tentativo) > 0) { // controllo se ci sono tentativi
-               
-                for($i=0;$i<count($tentativo);$i++) {          
-                    echo '<li class="list-group-item">';
-                    echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
-                    echo '</li>';
-                }
-                
-            } else {
-                echo '<li class="list-group-item">Nessun tentativo effettuato</li>';
-            }
-        ?>
+        <!--prova layout a griglia!-->
+        <div class="container border text-center">
+            <div class="row">
+                <div class="col border">
+                    <ul class="list-group">
+                    <?php //stampa dei tentativi dell'utente
+                        $tentativo = $_SESSION['tentativiUtente'] ;
+                        echo "<h3>Tentativi:</h3>";
+                            if (count($tentativo) > 0) { // controllo se ci sono tentativi
+                                for($i=0;$i<count($tentativo);$i++) {          
+                                    echo '<li class="list-group-item">';
+                                    echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
+                                    echo '</li>';
+                                }                        
+                            } 
+                    ?>
+                    </ul>
+                </div>
+                <div class="col border">
+                    <ul class="list-group">
+                    <?php
+                        $suggerimenti = $_SESSION['suggerimenti'];
+                        echo "<h3>Suggerimenti:</h3>";
+                        for($i=0;$i<count($suggerimenti);$i++) {    
+                            if(!empty($suggerimenti[$i])){
+                                echo '<li class="list-group-item">';
+                                echo implode(' - ', $suggerimenti[$i]); // Stampa i suggerimenti
+                                echo '</li>';
+                            }else{
+                                echo '<li class="list-group-item">';
+                                echo "- - - - - -"; // Stampa i suggerimenti
+                                echo '</li>';
+                            }
+
+                        }  
+                    ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group">  
         </ul>
     </div>
 
