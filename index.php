@@ -15,13 +15,13 @@
     }
 
     //combinazione random del pc
-   if (isset($_SESSION['combinazionePC'])) {
+  // if (isset($_SESSION['combinazionePC'])) {
        // se la combinazione del computer è settata
        //echo "Combinazione PC già settata: ";
-       echo "<pre>";
-       print_r($_SESSION['combinazionePC']);
-       echo "</pre>";
-   } else {
+  //     echo "<pre>";
+  //     print_r($_SESSION['combinazionePC']);
+  //     echo "</pre>";
+  // } else {
        $combinazionePC = array();
        for ($i = 0; $i < 4; $i++) {
            $numero = rand(1, 4);
@@ -49,65 +49,74 @@
       // echo "<pre>";
       // print_r($combinazionePC);
      //  echo "</pre>";
-   }
+  // }
+  echo ".";
    ?>
 <!doctype html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>MASTERMIND</h1>
+    
+    <h1 class="text-center text-danger">GIOCA A MASTERMIND!</h1>
     <div class="w-50 mx-auto my-auto text-center">
         <form action="./process.php">
         <table class="table table-bordered ">
         <tr>
             <td><!--SELEZIONE COLORE 1!-->
                 <input type="radio" id="rosso" name="color1" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
+                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
                 <input type="radio" id="verde" name="color1" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
+                <label for="verde" class="text-success"><h6>verde</h6></label><br>
                 <input type="radio" id="blu" name="color1" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+                <label for="blu" class="text-primary"><h6>blu</h6></label><br>
                 <input type="radio" id="giallo" name="color1" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>
+                <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>
             </td>
 
             <td><!--SELEZIONE COLORE 2 !-->
                 <input type="radio" id="rosso" name="color2" value="rosso">
-               <label for="rosso" class="text-danger">rosso</label><br>
+               <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
                <input type="radio" id="verde" name="color2" value="verde">
-               <label for="verde" class="text-success">verde</label><br>
+               <label for="verde" class="text-success"><h6>verde</h6></label><br>
                 <input type="radio" id="blu" name="color2" value="blu">
-               <label for="blu" class="text-primary">blu</label><br>
+               <label for="blu" class="text-primary"><h6>blu</h6></label><br>
                 <input type="radio" id="giallo" name="color2" value="giallo">
-              <label for="giallo" class="text-warning" >Giallo</label>      
+              <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>      
             </td>
 
             <td><!--SELEZIONE COLORE 3 !-->
                 <input type="radio" id="rosso" name="color3" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
+                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
             <input type="radio" id="verde" name="color3" value="verde">
-              <label for="verde" class="text-success">verde</label><br>
+              <label for="verde" class="text-success"><h6>verde</h6></label><br>
                <input type="radio" id="blu" name="color3" value="blu">
-              <label for="blu" class="text-primary">blu</label><br>
+              <label for="blu" class="text-primary"><h6>blu</h6></label><br>
                 <input type="radio" id="giallo" name="color3" value="giallo">
-               <label for="giallo" class="text-warning" >Giallo</label>    
+               <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>    
             </td>
             <td><!--SELEZIONE COLORE 4 !-->
                 <input type="radio" id="rosso" name="color4" value="rosso">
-                <label for="rosso" class="text-danger">rosso</label><br>
+                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
                 <input type="radio" id="verde" name="color4" value="verde">
-                <label for="verde" class="text-success">verde</label><br>
+                <label for="verde" class="text-success"><h6>verde</h6></label><br>
                 <input type="radio" id="blu" name="color4" value="blu">
-                <label for="blu" class="text-primary">blu</label><br>
+                <label for="blu" class="text-primary"><h6>blu</h6></label><br>
                 <input type="radio" id="giallo" name="color4" value="giallo">
-                <label for="giallo" class="text-warning" >Giallo</label>    
+                <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>    
             </td>
         </table>
-            <button type="submit" class="btn btn-info">Invia</button>
+        <!-- From Uiverse.io by cssbuttons-io --> 
+            <button type="submit">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text"> Invia
+            </span>
+            </button>
         </form>
         <!--prova layout a griglia!-->
         <div class="container border text-center">
