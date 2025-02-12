@@ -58,7 +58,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>MASTERMIND</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--google fonts!-->
@@ -72,7 +72,7 @@
         <table class="table table-bordered ">
         <tr>
             <td><!--SELEZIONE COLORE 1!-->
-                <input type="radio" id="rosso" name="color1" value="rosso">
+            <input type="radio" id="rosso" name="color1" value="rosso">
                 <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
                 <input type="radio" id="verde" name="color1" value="verde">
                 <label for="verde" class="text-success"><h6>verde</h6></label><br>
@@ -133,7 +133,24 @@
                             if (count($tentativo) > 0) { // controllo se ci sono tentativi
                                 for($i=0;$i<count($tentativo);$i++) {          
                                     echo '<li class="list-group-item">';
-                                    echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
+                                    for($x=0;$x<count($tentativo[$i]);$x++){
+                                        if($tentativo[$i][$x] == "rosso"){
+                                            echo '<img src="./images/rosso(1).gif">';
+                                        }else 
+                                            if($tentativo[$i][$x] == "verde"){
+                                                echo '<img src="./images/verde.gif">';
+                                            
+                                        }else
+                                            if($tentativo[$i][$x] == "giallo"){
+                                                echo '<img src="./images/giallo.gif">';
+                                            
+                                        }else
+                                            if($tentativo[$i][$x] == "blu"){
+                                                echo '<img src="./images/blu.gif">';
+                                            
+                                        }
+                                    }
+                                    //echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
                                     echo '</li>';
                                 }                        
                             } 
@@ -147,12 +164,18 @@
                         echo "<h3>Suggerimenti:</h3>";
                         for($i=0;$i<count($suggerimenti);$i++) {    
                             if(!empty($suggerimenti[$i])){
-                                echo '<li class="list-group-item">';
-                                echo implode(' - ', $suggerimenti[$i]); // Stampa i suggerimenti
-                                echo '</li>';
+                             echo '<li class="list-group-item">';
+                             for($x=0;$x<count($suggerimenti[$i]);$x++){ //stampa l'array contenente i suggerimenti per quel tentativo
+                                if($suggerimenti[$i][$x] == "nero"){
+                                    echo '<img src="./images/nero.gif">';
+                                }else{
+                                    echo '<img src="./images/bianco(1).gif">';
+                                }
+                             }
+                            echo '</li>';
                             }else{
                                 echo '<li class="list-group-item">';
-                                echo "- - - - - -"; // Stampa i suggerimenti
+                                echo "- - - - - -"; // Stampa --- se non ci sono suggerimenti
                                 echo '</li>';
                             }
 
