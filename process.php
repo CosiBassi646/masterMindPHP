@@ -26,6 +26,7 @@
     //controllo se ha indovinato
     if($combinazionePC == $coloriUtente){
         header("Location: ./menu.php");
+        $_SESSION['esitoPartita'] = true;
         exit;
     }else{
                 // Memorizzo i tentativi nella sessione
