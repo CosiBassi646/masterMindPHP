@@ -64,54 +64,57 @@
     <!--google fonts!-->
 
 </head>
-  <body >
-    
-  <h1 class="titolo1">MASTER MIND</h1>
+  <body>
+    <div class="mx-auto my-auto w-25">
+        <h1 class="titolo1 text-danger">MASTER MIND</h1>
+        <h5 class="titolo1 text-dark">crea una combinazione e premi Invia!</h5>
+        <hr>
+    </div>
   <div class="w-50 mx-auto my-auto text-center">
         <form action="./process.php">
         <table class="table table-bordered ">
         <tr>
             <td><!--SELEZIONE COLORE 1!-->
-            <input type="radio" id="rosso" name="color1" value="rosso">
-                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
+                <input type="radio" id="rosso" name="color1" value="rosso">
+                    <label for="rosso" class="text-danger"><img src="./images/rosso(1).gif"></label><br>
                 <input type="radio" id="verde" name="color1" value="verde">
-                <label for="verde" class="text-success"><h6>verde</h6></label><br>
+                    <label for="verde" class="text-success"><img src="./images/verde.gif"></label><br>
                 <input type="radio" id="blu" name="color1" value="blu">
-                <label for="blu" class="text-primary"><h6>blu</h6></label><br>
+                    <label for="blu" class="text-primary"><img src="./images/blu.gif"></label><br>
                 <input type="radio" id="giallo" name="color1" value="giallo">
-                <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>
+                    <label for="giallo" class="text-warning" ><img src="./images/giallo.gif"></label>
             </td>
 
             <td><!--SELEZIONE COLORE 2 !-->
                 <input type="radio" id="rosso" name="color2" value="rosso">
-               <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
-               <input type="radio" id="verde" name="color2" value="verde">
-               <label for="verde" class="text-success"><h6>verde</h6></label><br>
+                    <label for="rosso" class="text-danger"><img src="./images/rosso(1).gif"></label><br>
+                <input type="radio" id="verde" name="color2" value="verde">
+                    <label for="verde" class="text-success"><img src="./images/verde.gif"></label><br>
                 <input type="radio" id="blu" name="color2" value="blu">
-               <label for="blu" class="text-primary"><h6>blu</h6></label><br>
+                    <label for="blu" class="text-primary"><img src="./images/blu.gif"></label><br>
                 <input type="radio" id="giallo" name="color2" value="giallo">
-              <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>      
+              <label for="giallo" class="text-warning" ><img src="./images/giallo.gif"></label>      
             </td>
 
             <td><!--SELEZIONE COLORE 3 !-->
                 <input type="radio" id="rosso" name="color3" value="rosso">
-                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
-            <input type="radio" id="verde" name="color3" value="verde">
-              <label for="verde" class="text-success"><h6>verde</h6></label><br>
-               <input type="radio" id="blu" name="color3" value="blu">
-              <label for="blu" class="text-primary"><h6>blu</h6></label><br>
+                    <label for="rosso" class="text-danger"><img src="./images/rosso(1).gif"></label><br>
+                <input type="radio" id="verde" name="color3" value="verde">
+                    <label for="verde" class="text-success"><img src="./images/verde.gif"></label><br>
+                <input type="radio" id="blu" name="color3" value="blu">
+                    <label for="blu" class="text-primary"><img src="./images/blu.gif"></label><br>
                 <input type="radio" id="giallo" name="color3" value="giallo">
-               <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>    
+                    <label for="giallo" class="text-warning" ><img src="./images/giallo.gif"></label>    
             </td>
             <td><!--SELEZIONE COLORE 4 !-->
                 <input type="radio" id="rosso" name="color4" value="rosso">
-                <label for="rosso" class="text-danger"><h6>rosso</h6></label><br>
+                    <label for="rosso" class="text-danger"><img src="./images/rosso(1).gif"></label><br>
                 <input type="radio" id="verde" name="color4" value="verde">
-                <label for="verde" class="text-success"><h6>verde</h6></label><br>
+                    <label for="verde" class="text-success"><img src="./images/verde.gif"></label><br>
                 <input type="radio" id="blu" name="color4" value="blu">
-                <label for="blu" class="text-primary"><h6>blu</h6></label><br>
+                    <label for="blu" class="text-primary"></label><img src="./images/blu.gif"><br>
                 <input type="radio" id="giallo" name="color4" value="giallo">
-                <label for="giallo" class="text-warning" ><h6>Giallo</h6></label>    
+                    <label for="giallo" class="text-warning" ><img src="./images/giallo.gif"></label>    
             </td>
         </table>
         <!-- From Uiverse.io by cssbuttons-io --> 
@@ -122,6 +125,7 @@
             </span>
             </button>
         </form>
+        
         <!--prova layout a griglia!-->
         <div class="container border text-center">
             <div class="row">
@@ -134,7 +138,7 @@
                                 for($i=0;$i<count($tentativo);$i++) {          
                                     echo '<li class="list-group-item">';
                                     for($x=0;$x<count($tentativo[$i]);$x++){
-                                        if($tentativo[$i][$x] == "rosso"){
+                                        if($tentativo[$i][$x] == "rosso"){ //stampa dei tentativi 
                                             echo '<img src="./images/rosso(1).gif">';
                                         }else 
                                             if($tentativo[$i][$x] == "verde"){
@@ -150,7 +154,6 @@
                                             
                                         }
                                     }
-                                    //echo implode(' - ', $tentativo[$i]); // Stampa i colori separati da " - "
                                     echo '</li>';
                                 }                        
                             } 
