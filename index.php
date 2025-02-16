@@ -20,9 +20,9 @@
    if (isset($_SESSION['combinazionePC'])) {
        // se la combinazione del computer è settata
        //echo "Combinazione PC già settata: ";
-   //   echo "<pre>";
-   //    print_r($_SESSION['combinazionePC']);
-    //   echo "</pre>";
+      echo "<pre>";
+       print_r($_SESSION['combinazionePC']);
+       echo "</pre>";
  } else {
        $combinazionePC = array();
        for ($i = 0; $i < 4; $i++) {
@@ -191,7 +191,15 @@
         <ul class="list-group">  
         </ul>
     </div>
-
+    <br>
+    <div class="text-center w-75 mx-auto my-auto">
+    <button type="submit">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text"> <a class="link-light" href="./menu.php">Termina partita</a>
+            </span>
+    </button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

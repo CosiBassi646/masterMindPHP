@@ -24,11 +24,7 @@
       }
     ?>
     <hr>
-    <button type="submit">
-              <span class="shadow"></span>
-              <span class="edge"></span>
-              <a class="front text"  href="./index.php">avvia una nuova partita!</a>
-    </button>
+    <button class="btn btn-primary"><a class="link-light"  href="./index.php">avvia una nuova partita!</a></button>
   </div>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
